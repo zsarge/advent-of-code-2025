@@ -1,26 +1,16 @@
-# Numbered Grid Project Template.
+# [Advent of Code 2025](https://adventofcode.com/2025)
 
-I've done enough challenges with a numbered grid, so I figured I'd make this a reusable template for myself.
-
-These scripts are used across:
-- <https://github.com/zsarge/ProjectEuler>
-- <https://github.com/zsarge/advent-of-code-2021/>
-- <https://github.com/zsarge/advent-of-code-2022/>
-- ... More?
-
-This is just for my personal use. Buyer beware.
-
-## My Project Euler solutions:
+## My Advent of Code 2025 Solutions:
 (Click a number to view the associated solution.)
 <!---
   This table is automatically generated and is best viewed with line wrap off.
   I did consider reference style links, and they didn't seem much better.
   Just try and view the formatted table, if you can.
 -->
-| [1](solutions/001/solve1.rb) | 2  | 3  | 4  |
-| ---------------------------- | -- | -- | -- |
-| 5                            | 6  | 7  | 8  |
-| 9                            | 10 | 11 | 12 |
+| 1 | 2  | 3  | 4  |
+| - | -- | -- | -- |
+| 5 | 6  | 7  | 8  |
+| 9 | 10 | 11 | 12 |
 
 
 [[View solutions filtered by language used]](solutionsByLanguages.md)
