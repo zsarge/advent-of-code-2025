@@ -132,36 +132,27 @@ def makeFilledTable(language = nil)
     files.store(name.to_i, makeLink(solutions, name))
   end
 
-  arr = (1..100).to_a
+  arr = (1..12).to_a
   arr = arr.map { |num| getLink(num, files, language) }
   arr = arr.map(&:to_s)
 
-  return  makeTable(arr, 10)
+  return  makeTable(arr, 4)
 end
 
 FULL_TABLE = makeFilledTable()
 PYTHON_TABLE = makeFilledTable("py")
 RUBY_TABLE = makeFilledTable("rb")
 HASKELL_TABLE = makeFilledTable("hs")
+PERL_TABLE = makeFilledTable("pl")
 JAVA_TABLE = makeFilledTable("java")
 
 # Stop content generation
 # Start writing to file
 
 content = "\
-# Numbered Grid Project Template.
+# [Advent of Code 2025](https://adventofcode.com/2025)
 
-I've done enough challenges with a numbered grid, so I figured I'd make this a reusable template for myself.
-
-These scripts are used across:
-- <https://github.com/zsarge/ProjectEuler>
-- <https://github.com/zsarge/advent-of-code-2021/>
-- <https://github.com/zsarge/advent-of-code-2022/>
-- ... More?
-
-This is just for my personal use. Buyer beware.
-
-## My Project Euler solutions:
+## My Advent of Code 2025 Solutions:
 (Click a number to view the associated solution.)
 <!---
   This table is automatically generated and is best viewed with line wrap off.
@@ -198,6 +189,9 @@ individual_tables = "\
 
 ## My Haskell solutions:
 #{HASKELL_TABLE}
+
+## My Perl solutions:
+#{PERL_TABLE}
 
 ## My Java solutions:
 #{JAVA_TABLE}

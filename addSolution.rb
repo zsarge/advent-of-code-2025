@@ -9,9 +9,9 @@ require 'nokogiri'
 
 # Get text from internet -----
 def getProblemText(num, language)
-  url = "https://projecteuler.net/problem=#{num}"
+  url = "https://adventofcode.com/2025/day/#{num}"
   doc = Nokogiri::HTML(URI.open(url))
-  content = doc.css('div.problem_content')
+  content = doc.css('.day-desc')
   if language == "hs" || language == "java"
     comment = ""
   else
@@ -70,7 +70,8 @@ end
 # pick template based on extension
 if extension == "rb"
   template = "\
-# https://projecteuler.net/problem=#{problemNumber}
+#!/usr/bin/env ruby
+# https://adventofcode.com/2025/day/#{problemNumber}
 # Run with: 'ruby #{filename}'
 # using Ruby 2.5.1
 # by Zack Sargent
@@ -81,7 +82,8 @@ puts 'Hello World!'
 "
 elsif extension == "py"
   template = "\
-# https://projecteuler.net/problem=#{problemNumber}
+#!/usr/bin/env python3
+# https://adventofcode.com/2025/day/#{problemNumber}
 # Run with: 'python #{filename}'
 # using Python 3.6.9
 # by Zack Sargent
@@ -101,7 +103,7 @@ if __name__ == \"__main__\":
 "
 elsif extension == "hs"
   template = "\
--- https://projecteuler.net/problem=#{problemNumber}
+-- https://adventofcode.com/2025/day/#{problemNumber}
 -- Run with: 'ghc #{filename} && ./#{filename[0..filename.size-4]}' or 'runhaskell #{filename}'
 -- using Haskell with GHC 8.0.2
 -- by Zack Sargent
@@ -112,9 +114,24 @@ elsif extension == "hs"
 
 main = putStrLn \"Hello World\"
 "
+elsif extension == "pl"
+  template = "\
+#!/usr/bin/env perl
+# https://adventofcode.com/2025/day/#{problemNumber}
+# Run with: 'perl #{filename}'
+# using Perl v5.40.3
+# by Zack Sargent
+use v5.40;
+use utf8;
+use open ':std', ':utf8';
+
+# Prompt:
+#{getProblemText(problemNumber, extension)}
+say 'Hello World!'
+"
 elsif extension == "java"
   template = "\
-// https://projecteuler.net/problem=#{problemNumber}
+// https://adventofcode.com/2025/day/#{problemNumber}
 // Run with: 'javac #{filename} && java Solve#{problemNumber}'
 // using openjdk version 11.0.10 and javac 11.0.10
 // by Zack Sargent
